@@ -1,3 +1,4 @@
+/* Styling for individual rows */
 .row:nth-child(1) .left {
     background-color: #e8d8c9;
 }
@@ -14,17 +15,20 @@
     background-color: #f3711d;
 }
 
+/* Body styling */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #fefefe;
+    position: relative;
 }
 
+/* Text container for the centered header */
 .text-container {
     display: flex;
     justify-content: center;
@@ -33,31 +37,71 @@ body {
     margin-bottom: 20px;
 }
 
+/* Text styling for centered header */
 .centered-text {
-    font-size: 24px;
+    font-size: 28px;
     font-family: "Playwrite ID Guides", serif;
     font-weight: 400;
     font-style: normal;
     color: #333;
 }
 
+/* Styling for the blinking underscore */
+.blinking-underscore {
+    font-weight: thin;
+    animation: blink 2s step-end infinite;
+}
+
+/* Keyframes for the blinking animation */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Main container for rows */
 .container {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* Row container */
 .row {
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
+/* Styling for rectangles */
 .rectangle {
-    width: 150px;
-    height: 100px;
+    width: 300px;
+    height: 200px;
     border-radius: 15px;
     box-shadow: 7px 7px 0px #48A6A7;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.rectangle-text {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-family: "Noto Sans", serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
+    font-weight: 400;
+    font-size: 28px;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.rectangle-icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 16px;
+    height: 16px;
 }
 
 .rectangle:hover {
@@ -65,42 +109,54 @@ body {
     box-shadow: 7px 7px 15px #5bcefa;
 }
 
-/* Mobile-friendly adjustments */
+.copyright-text {
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    color: #333;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
 @media (max-width: 600px) {
     .rectangle {
-        width: 120px;
-        height: 80px;
+        width: 140px;
+        height: 100px;
+        border-radius: 10px;
     }
 
     .row {
         flex-direction: column;
-        gap: 10px;
-    }
-
-    .container {
         gap: 15px;
     }
 
+    .container {
+        gap: 10px;
+    }
+
     .centered-text {
-        font-size: 18px;
+        font-size: 22px;
+    }
+
+    .rectangle-text {
+        font-size: 12px;
+        bottom: 5px;
+        right: 10px;
+    }
+
+    .rectangle-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .copyright-text {
+        font-size: 14px;
     }
 
     body {
         height: auto;
+        padding-bottom: 20px;
     }
-}
-
-/* Copyright text at the bottom */
-.copyright-text {
-    font-family: "Smooch Sans", serif;
-    font-weight: 400;
-    /* Adjust weight to your liking */
-    font-size: 14px;
-    color: #333;
-    position: absolute;
-    bottom: 20px;
-    /* 20px from the bottom */
-    text-align: center;
-    width: 100%;
-    letter-spacing: 1px;
 }
