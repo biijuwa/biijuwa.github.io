@@ -17,12 +17,15 @@
 
 /* Body styling */
 body {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100vh;
     margin: 0;
+    padding: 0;
+    overflow: hidden;
     font-family: Arial, sans-serif;
     background-color: #fefefe;
     position: relative;
@@ -35,6 +38,8 @@ body {
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
+    padding: 0 10px;
+    /* Ensures no overflow on small screens */
 }
 
 /* Text styling for centered header */
@@ -44,6 +49,8 @@ body {
     font-weight: 400;
     font-style: normal;
     color: #333;
+    text-align: center;
+    /* Centers the text */
 }
 
 /* Styling for the blinking underscore */
@@ -64,6 +71,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 0 10px;
+    /* Ensures no overflow */
 }
 
 /* Row container */
@@ -71,6 +80,8 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
+    /* Allows items to wrap on smaller screens */
 }
 
 /* Styling for rectangles */
@@ -81,6 +92,8 @@ body {
     box-shadow: 7px 7px 0px #48A6A7;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    flex-shrink: 0;
+    /* Prevents rectangles from shrinking */
 }
 
 .rectangle-text {
@@ -115,11 +128,17 @@ body {
     font-weight: 100;
     text-align: center;
     color: #333;
-    position: absolute;
-    bottom: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
+    padding: 10px 0;
+    background-color: #fefefe;
+    z-index: 10;
 }
 
+/* Mobile styles for better responsiveness */
 @media (max-width: 600px) {
     .rectangle {
         width: 140px;
@@ -130,6 +149,8 @@ body {
     .row {
         flex-direction: column;
         gap: 15px;
+        align-items: center;
+        /* Center items */
     }
 
     .container {
@@ -147,8 +168,8 @@ body {
     }
 
     .rectangle-icon {
-        width: 20px;
-        height: 20px;
+        width: 14px;
+        height: 14px;
     }
 
     .copyright-text {
