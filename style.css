@@ -1,45 +1,104 @@
 /* Styling for individual rows */
-.row:nth-child(1) .left {
-    background-color: #e8d8c9;
-}
-
-.row:nth-child(1) .right {
-    background-color: #872341;
-}
-
 .row:nth-child(2) .left {
-    background-color: #09122c;
+    background-color: #e8d8c9;
+    /* First row left rectangle */
 }
 
 .row:nth-child(2) .right {
+    background-color: #872341;
+    /* First row right rectangle */
+}
+
+.row:nth-child(3) .left {
+    background-color: #09122c;
+    /* Second row left rectangle */
+}
+
+.row:nth-child(3) .right {
     background-color: #f3711d;
+    /* Second row right rectangle */
 }
 
 /* Body styling */
 body {
     width: 100vw;
     height: 100vh;
+    /* Matches viewport height */
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    /* Stack elements vertically */
     margin: 0;
     padding: 0;
     overflow: hidden;
+    /* Prevent scrolling */
     font-family: Arial, sans-serif;
     background-color: #fefefe;
     position: relative;
 }
 
-/* Text container for the centered header */
-.text-container {
+/* Main container for rows */
+.container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 20px;
     padding: 0 10px;
-    /* Ensures no overflow on small screens */
+    flex: 1;
+    /* Allows the container to fill available space */
+    justify-content: center;
+    /* Center rectangles vertically */
+    align-items: center;
+    /* Center rectangles horizontally */
+    overflow: hidden;
+}
+
+/* Time container */
+.time-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-family: "Smooch Sans", sans-serif;
+}
+
+#time-display {
+    font-size: 20px;
+    color: #f5f5f5;
+}
+
+.time-icon {
+    width: 42px;
+    height: 42px;
+}
+
+/* Styling for the time container */
+.time-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    /* Ensures it stays on top */
+}
+
+/* Styling for the time display text */
+#time-display {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Styling for the clock icon */
+.time-icon {
+    width: 20px;
+    height: 20px;
 }
 
 /* Text styling for centered header */
@@ -50,7 +109,6 @@ body {
     font-style: normal;
     color: #333;
     text-align: center;
-    /* Centers the text */
 }
 
 /* Styling for the blinking underscore */
@@ -66,22 +124,12 @@ body {
     }
 }
 
-/* Main container for rows */
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 10px;
-    /* Ensures no overflow */
-}
-
 /* Row container */
 .row {
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    /* Allows items to wrap on smaller screens */
 }
 
 /* Styling for rectangles */
@@ -93,7 +141,6 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     flex-shrink: 0;
-    /* Prevents rectangles from shrinking */
 }
 
 .rectangle-text {
@@ -122,20 +169,21 @@ body {
     box-shadow: 7px 7px 15px #5bcefa;
 }
 
+/* Footer copyright text */
 .copyright-text {
     font-family: "Smooch Sans", sans-serif;
     font-size: 20px;
     font-weight: 100;
     text-align: center;
     color: #333;
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
+    position: relative;
+    /* Ensure it's part of the flow */
+    margin-top: auto;
+    /* Pushes the footer to the bottom */
     padding: 10px 0;
     background-color: #fefefe;
     z-index: 10;
+    width: 100%;
 }
 
 /* Mobile styles for better responsiveness */
@@ -150,11 +198,14 @@ body {
         flex-direction: column;
         gap: 15px;
         align-items: center;
-        /* Center items */
     }
 
     .container {
         gap: 10px;
+    }
+
+    .text-container {
+        margin-bottom: 10px;
     }
 
     .centered-text {
@@ -177,7 +228,7 @@ body {
     }
 
     body {
-        height: auto;
-        padding-bottom: 20px;
+        height: 100vh;
+        /* Ensures full viewport height */
     }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Word!</title>
+    <title>Hello World!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,36 +14,50 @@
 </head>
 
 <body>
-    <div class="text-container">
-        <p class="centered-text">Bijaya Limbu<span class="blinking-underscore">___</span></p>
+    <!-- Time Container -->
+    <div class="time-container">
+        <img src="images/icons/sun_icon.png" alt="sun" class="time-icon">
+        <p id="time-display"></p>
     </div>
 
     <div class="container">
+        <!-- Centered text -->
+        <div class="text-container">
+            <p class="centered-text">Bijaya Limbu<span class="blinking-underscore">___</span></p>
+        </div>
+
+        <!-- First row -->
         <div class="row">
             <div class="rectangle left">
-                <!-- <img src="circle_icon.png" alt="blog_icon" class="rectangle-icon"> -->
-                <span class="rectangle-text"></span>
-             </div>
+                <img src="images/icons/star_o_icon.png" alt="Star Icon" class="rectangle-icon">
+                <span class="rectangle-text">Projects</span>
+            </div>
             <div class="rectangle right">
-                <img src="images/icons/circle_icon.png" alt="" class="rectangle-icon">
-                <span class="rectangle-text">blog</span>
+                <img src="images/icons/circle_t_icon.png" alt="Circle Icon" class="rectangle-icon">
+                <span class="rectangle-text">Blog</span>
             </div>
         </div>
+
+        <!-- Second row -->
         <div class="row">
             <div class="rectangle left">
-                <img src="images/icons/ninjas_icon.png" alt="" class="rectangle-icon">
-                <span class="rectangle-text"></span>
-                </div>
+                <img src="images/icons/tri_t_icon.png" alt="Triangle Icon" class="rectangle-icon">
+                <span class="rectangle-text">Skills</span>
+            </div>
             <div class="rectangle right">
-            <img src="images/icons/star_icon.png" alt="" class="rectangle-icon">
-            <span class="rectangle-text"></span>
+                <img src="images/icons/ninjas_t_icon.png" alt="Ninjas Icon" class="rectangle-icon">
+                <span class="rectangle-text">About</span>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <div class="copyright-text">
         &copy; 2025 Bijaya Limbu
     </div>
+
+    <!-- Import External Script -->
+    <script src="time.js"></script>
 </body>
 
 </html>
