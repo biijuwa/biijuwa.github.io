@@ -1,23 +1,33 @@
 function updateTime() {
   const options = {
     timeZone: 'Asia/Kathmandu',
-    hour12: false, 
+    hour12: false,
+    month: 'short',
+    day: 'numeric',
     hour: '2-digit',
+    minute: '2-digit',
   };
 
   const now = new Date().toLocaleString('en-US', options);
-  const currentHour = parseInt(now.substring(0, 2)); 
+  const currentHour = parseInt(now.substring(now.indexOf(",") + 2, now.indexOf(":")));
+  const timeDisplay = document.getElementById('time-display');
+  const timeIcon = document.querySelector('.time-icon');
+  const timeContainer = document.querySelector('.time-container');
 
-  document.getElementById('time-display').innerText = now;
+  timeDisplay.innerText = now;
 
-  if (currentHour >= 18) {
-    document.body.style.backgroundColor = 'black';
+  if (currentHour >= 18 || currentHour < 6) {
+    timeIcon.src = 'images/icons/moon_night_icon.png';
+    timeContainer.style.backgroundColor = '#16404D';
+    timeDisplay.style.color = '#ffffff';
   } else {
-    document.body.style.backgroundColor = 'white'; // or your preferred default color
+    timeIcon.src = 'images/icons/sun_icon.png';
+    timeContainer.style.backgroundColor = '#ffffff';
+    timeDisplay.style.color = '#333333';
   }
+
+  timeContainer.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
 }
 
-// Update time every second
 setInterval(updateTime, 1000);
-
 updateTime();
