@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Word!</title>
+    <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
+    <!-- Preconnecting to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&family=Playwrite+ID+Guides&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header: Time container -->
+    <header class="time-container">
+        <img src="images/icons/sun_icon.png" alt="Time Icon" class="time-icon" aria-label="Time Icon">
+        <p id="time-display" aria-live="polite"></p>
+    </header>
+
+    <!-- Main content -->
+    <main class="container">
+        <h1 class="centered-text">Bijaya Limbu<span class="blinking-underscore">___</span></h1>
+
+        <!-- First row of rectangles -->
+        <section class="row">
+            <div class="rectangle left">
+                <img src="images/icons/star_o_icon.png" alt="Star Icon" class="rectangle-icon">
+                <span class="rectangle-text">Star</span>
+            </div>
+            <div class="rectangle right">
+                <img src="images/icons/circle_t_icon.png" alt="Circle Icon" class="rectangle-icon">
+                <span class="rectangle-text">#blog</span>
+            </div>
+        </section>
+
+        <!-- Second row of rectangles -->
+        <section class="row">
+            <div class="rectangle left">
+                <img src="images/icons/tri_t_icon.png" alt="Triangle Icon" class="rectangle-icon">
+                <span class="rectangle-text">Triangle</span>
+            </div>
+            <div class="rectangle right">
+                <img src="images/icons/ninjas_t_icon.png" alt="Ninjas Icon" class="rectangle-icon">
+                <span class="rectangle-text">#myRecommendations</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="copyright-text">
+        &copy; 2025 Bijaya Limbu
+    </footer>
+
+    <script src="time.js"></script>
+</body>
+
+</html>
