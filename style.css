@@ -2,25 +2,25 @@
 body {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    /* Center the container horizontally */
+    background-color: #fefefe;
     font-family: "Crimson Text", serif;
     font-weight: 400;
     font-style: normal;
-    background-color: #fefefe;
-    position: relative;
+    overflow: hidden;
 }
 
-/* Container for the main content */
+/* Center container with 60% width */
 .container {
+    width: 60%;
+    /* 60% of the screen width */
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 0 10px;
-    flex: 1;
     justify-content: center;
     align-items: center;
 }
@@ -36,9 +36,7 @@ body {
     padding: 5px 15px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 100;
     font-size: 14px;
-    font-family: "Dosis", serif;
     font-weight: 500;
     color: #333;
 }
@@ -54,25 +52,21 @@ body {
 
 /* Footer */
 .copyright-text {
-    font-size: 20px;
     text-align: center;
     margin-top: auto;
     padding: 10px 0;
-    background-color: #fefefe;
-    color: #333;
     font-family: "Dosis", serif;
 }
 
 /* Main content */
 .centered-text {
     font-size: 28px;
-    font-family: "Playwrite ID Guides", serif;
     color: #333;
     text-align: center;
 }
 
 .blinking-underscore {
-    animation: blink 2s step-end infinite;
+    animation: blink 1.5s step-end infinite;
 }
 
 @keyframes blink {
@@ -86,7 +80,6 @@ body {
     display: flex;
     gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .rectangle {
@@ -102,19 +95,9 @@ body {
     position: absolute;
     bottom: 10px;
     right: 15px;
-    font-family: "Crimson Text", serif;
     font-weight: 600;
     font-size: 20px;
     color: #ffffff;
-    padding: 5px;
-}
-
-.rectangle-icon {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    width: 16px;
-    height: 16px;
 }
 
 .rectangle:hover {
@@ -130,13 +113,11 @@ body {
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 10px;
 }
 
 /* Individual social link */
 .social-link {
-    font-family: "Crimson Text", serif;
     font-size: 16px;
     font-weight: 600;
     color: #ffffff;
@@ -144,10 +125,10 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Hover effect for links */
 .social-link:hover {
     color: #5bcefa;
 }
+
 /* Background colors for specific rectangles */
 .row:nth-child(2) .left {
     background-color: #e8d8c9;
@@ -167,57 +148,21 @@ body {
 
 /* Responsive styles */
 @media (max-width: 600px) {
+    .container {
+        width: 90%;
+        /* Adjust for small screens */
+    }
+
     .rectangle {
         width: 140px;
         height: 100px;
-        border-radius: 5px;
-    }
-
-    .row {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .container {
-        gap: 10px;
-    }
-
-    .centered-text {
-        font-size: 14px;
     }
 
     .rectangle-text {
         font-size: 12px;
-        bottom: 5px;
-        right: 10px;
-    }
-
-    .rectangle-icon {
-        width: 14px;
-        height: 14px;
     }
 
     .copyright-text {
         font-size: 14px;
-    }
-
-    /* Adjusting social-links for mobile */
-    .social-links {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-        /* Reduced gap for mobile */
-    }
-
-    .social-link {
-        font-size: 12px;
-        /* Smaller font size for mobile */
-        text-align: center;
     }
 }
