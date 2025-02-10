@@ -77,30 +77,19 @@ body {
     box-sizing: border-box;
 }
 
-.bot {
-    width: 100%;
-    border-radius: 12px;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 20px;
-    flex-grow: 1;
-    display: flex;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
+    /* Two columns for each row */
     gap: 30px;
     width: 100%;
+    max-width: 900px;
     margin: auto;
 }
 
 .grid-box {
-    width: 220px;
-    height: 220px;
+    min-width: 220px;
+    min-height: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,8 +144,6 @@ body {
 
     .grid-container {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        justify-items: center;
         gap: 20px;
     }
 
