@@ -84,6 +84,10 @@ body {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    margin-top: 0;
+    /* Fix gap issue */
+    padding-top: 10px;
+    /* Ensure spacing consistency */
 }
 
 .grid-container {
@@ -141,6 +145,7 @@ body {
     font-family: "Righteous", sans-serif;
 }
 
+/* Responsive Design */
 @media (max-width: 800px) {
 
     .header,
@@ -156,34 +161,51 @@ body {
     .container,
     .footer {
         width: 100vw;
-        padding: 10px;
+        padding: 0;
         min-width: unset;
+    }
+
+    .header {
+        margin-bottom: 0;
+    }
+
+    .container {
+        margin-top: 0;
+        padding-top: 10px;
     }
 
     .grid-container {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
+        /* Reduce gap for better spacing */
         justify-items: center;
-        /* Centers grid items horizontally */
     }
 
     .grid-box {
-        width: 80%;
-        /* Reduced width to make it smaller */
-        max-width: 270px;
-        /* Ensures they don’t get too large */
+        width: 70%;
+        /* Decrease width */
+        max-width: 220px;
+        /* Limit max size */
         height: auto;
-        margin: auto;
+        padding: 10px;
+        /* Reduce padding */
+        box-shadow: 5px 5px 0px #3674B5;
+        /* Adjust shadow */
+    }
+
+    .grid-box:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 5px 5px 12px #A6BB8D;
     }
 
     .color-box {
-        width: 140px;
-        height: 140px;
+        width: 80px;
+        height: 80px;
     }
 
     .cat-name {
-        font-size: 12px;
-        /* Smaller text size for mobile */
+        font-size: 10px;
+        /* Reduce text size */
     }
 }
 
