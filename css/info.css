@@ -1,0 +1,178 @@
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #295b72;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    color: black;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.header,
+.container,
+.footer {
+    width: 60%;
+    max-width: 900px;
+    min-width: 600px;
+    margin: 0 auto;
+}
+
+.header {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    width: 100%;
+    background-color: #bdd4ce;
+    border-bottom: 2px solid #333;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-img {
+    width: 3rem;
+    height: auto;
+}
+
+.hello-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Orbitron", sans-serif;
+    color: black;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.time-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+}
+
+.time {
+    font-size: 0.9rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.time-img {
+    width: 24px;
+    height: 24px;
+}
+
+.container {
+    padding: 20px;
+    background-color: #ededef;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    width: 100%;
+    color: black;
+    background-color: #bdd4ce;
+    border-top: 2px solid #333;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.footer p {
+    font-family: "Neuton", serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+}
+
+.footer-img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+@media (max-width: 800px) {
+
+    .header,
+    .container,
+    .footer {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header,
+    .container,
+    .footer {
+        width: 100vw;
+        padding: 0;
+        min-width: unset;
+    }
+
+    .header {
+        margin-bottom: 0;
+    }
+
+    .nav-component {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .logo-container {
+        gap: 5px;
+    }
+
+    .top-img {
+        width: 2rem;
+    }
+
+    .hello-text {
+        font-size: 1rem;
+    }
+
+    .time-container {
+        gap: 5px;
+    }
+
+    .time {
+        font-size: 0.8rem;
+    }
+
+    .container {
+        margin-top: 0;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+}
