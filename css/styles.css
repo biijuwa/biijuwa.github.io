@@ -5,9 +5,18 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #3674B5;
+    background-color: #295b72;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    box-sizing: border-box;
+    /* Ensure consistent box model */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    /* Apply box-sizing to all elements */
 }
 
 .header,
@@ -30,7 +39,7 @@ body {
     align-items: center;
     padding: 15px 25px;
     width: 100%;
-    background-color: #e2f7fa;
+    background-color: #bdd4ce;
     border-bottom: 2px solid #333;
     box-sizing: border-box;
 }
@@ -75,7 +84,7 @@ body {
 
 .container {
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #ededef;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -141,12 +150,46 @@ body {
     font-family: "Righteous", sans-serif;
 }
 
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    width: 100%;
+    color: black;
+    background-color: #bdd4ce;
+    border-top: 2px solid #333;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.footer p {
+    font-family: "Neuton", serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+}
+
+.footer-img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
 @media (max-width: 800px) {
 
     .header,
     .container,
     .footer {
         width: 80%;
+    }
+
+    .grid-container {
+        gap: 20px;
     }
 }
 
@@ -167,12 +210,12 @@ body {
     .container {
         margin-top: 0;
         padding-top: 10px;
+        padding-bottom: 20px;
     }
 
     .grid-container {
         grid-template-columns: 1fr;
         gap: 15px;
-
         justify-items: center;
     }
 
@@ -197,34 +240,4 @@ body {
     .cat-name {
         font-size: 10px;
     }
-}
-
-.footer {
-    display: flex;
-    justify-content: center;
-}
-
-.footer-component {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 30px;
-    width: 100%;
-    color: black;
-    background-color: #e2f7fa;
-    border-top: 2px solid #333;
-    gap: 20px;
-    box-sizing: border-box;
-}
-
-.footer p {
-    font-family: "Neuton", serif;
-    font-weight: 700;
-    font-size: 16px;
-    margin: 0;
-}
-
-.footer-img {
-    width: 2.5rem;
-    height: 2.5rem;
 }

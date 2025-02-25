@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Hello, User!</title>
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Monoton&family=Neuton:wght@200;300;400;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Monoton&family=Neuton:wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Orbitron:wght@400..900&family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/sytlesb.css">
 </head>
 
@@ -16,50 +16,58 @@
     <header class="header">
         <nav class="nav-component">
             <div class="logo-container">
-                <img src="../images/duck_u_2.png" alt="Logo of Blog Land" class="top-img" loading="lazy">
-                <span class="hello-text">Blog Land!</span>
+                <img src="../images/duck_u_2.png" alt="Website Logo" class="top-img" loading="lazy">
+                <span class="hello-text">Hello Readers!</span>
             </div>
             <div class="time-container">
-                <img src="../images/sun_icon_32_px.png" alt="Clock Icon" class="time-img" loading="lazy">
+                <img src="../images/sun_icon_32_px.png" alt="Time Icon" class="time-img" loading="lazy">
                 <span id="nepali-time" class="time">Loading...</span>
             </div>
         </nav>
     </header>
 
     <div class="container">
-        <div class="blog-title">
-            <h1>maybe a blog</h1>
+        <div class="blog-title-box">
+            <h1>Maybe a Blog!</h1>
         </div>
 
-        <nav class="nav-links">
-            <a href="../index.html">home</a> |
-            <a href="#">blog</a> |
-            <a href="#">tags</a> 
-        </nav>
+        <div class="links">
+            <a href="../index.html" class="link">Home |</a>
+            <a href="#" class="link">Blogs |</a>
+            <a href="#" class="link">Tags</a>
+        </div>
 
-        <div class="content">
-            <p>If you have comments, questions, or feedback, you can email. If you have comments, questions, or feedback, you can email.</p>
-            <ul class="blog-list">
-                <li><span class="date">2025-02-17:</span> <a href="#">Can I ethically use LLMs?</a></li>
-                <li><span class="date">2025-02-10:</span> <a href="#">What's in a ring buffer? And using them in Rust</a></li>
-                <li><span class="date">2025-02-03:</span> <a href="#">Summarizing our recommendations for software documentation</a></li>
-                <li><span class="date">2025-01-27:</span> <a href="#">Bright lights in dark times</a></li>
-                <li><span class="date">2025-01-20:</span> <a href="#">My writing process, and how I keep it sustainable</a></li>
-                <li><span class="date">2025-01-13:</span> <a href="#">Beginning of a MIDI GUI in Rust</a></li>
-                <li><span class="date">2025-01-06:</span> <a href="#">Great things about Rust that aren't just performance</a></li>
+        <p class="description">
+            Welcome to my blog! Here you can read about my latest posts and explore different topics related to coding, technology, and more.
+        </p>
+
+        <div class="blog-list">
+            <ul id="blog-list">
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <li><span class="date">Feb 25, 2025:</span> <a href="#">How to Learn Web Development in 2025 /How to Learn Web Development in 2025</a></li>
+                <button id="show-more-btn" style="display: none;">Show More</button>
             </ul>
         </div>
-
     </div>
 
     <footer class="footer">
         <div class="footer-component">
             <p>© 2025 Bijaya Limbu</p>
-            <img src="../images/ditto.png" alt="Footer Logo" class="footer-img" loading="lazy">
+            <img src="../images/bulba.png" alt="Footer Logo" class="footer-img" loading="lazy">
         </div>
     </footer>
 
-    <script src="../js/time.js"></script>
+    <script src="../js/time2.js"></script>
+    <script src="../js/button.js"></script>
 </body>
 
 </html>
