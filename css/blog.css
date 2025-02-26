@@ -58,7 +58,7 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     font-family: "Orbitron", sans-serif;
-    color: black;
+    color: #E52020;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -231,7 +231,6 @@ body {
     height: 2.5rem;
 }
 
-/* Show More Button */
 #show-more-btn {
     display: block;
     margin: 20px auto;
@@ -252,7 +251,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Responsive Design */
 @media (max-width: 800px) {
 
     .header,
