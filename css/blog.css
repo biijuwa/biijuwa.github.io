@@ -10,14 +10,12 @@ body {
     overflow-x: hidden;
     color: black;
     box-sizing: border-box;
-    /* Ensure consistent box model */
 }
 
 *,
 *::before,
 *::after {
     box-sizing: inherit;
-    /* Apply box-sizing to all elements */
 }
 
 .header,
@@ -84,14 +82,32 @@ body {
 }
 
 .container {
+    position: relative;
     padding: 20px;
     background-color: #ededef;
+    background-image: url('../images/blog_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
     padding-top: 10px;
+    z-index: 1;
+}
+ 
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: -1;
 }
 
 .blog-title-box {
@@ -106,6 +122,7 @@ body {
     text-align: center;
     margin-top: 30px;
     border: 2px solid black;
+    gap: 15px;
 }
 
 .blog-title-box h1 {
@@ -113,6 +130,12 @@ body {
     font-family: "Orbitron", sans-serif;
     font-weight: bold;
     color: black;
+    margin: 0;
+}
+
+.blog-icon {
+    width: 32px;
+    height: auto;
 }
 
 .links {
@@ -133,6 +156,7 @@ body {
     color: #3674B5;
 }
 
+/* Blog Description */
 .description {
     font-size: 0.8rem;
     margin-top: 20px;
@@ -144,6 +168,7 @@ body {
     width: 80%;
 }
 
+/* Blog List */
 .blog-list {
     text-align: justify;
     width: 80%;
@@ -178,6 +203,7 @@ body {
     margin-right: 10px;
 }
 
+/* Footer */
 .footer {
     display: flex;
     justify-content: center;
@@ -208,6 +234,7 @@ body {
     height: 2.5rem;
 }
 
+/* Show More Button */
 #show-more-btn {
     display: block;
     margin: 20px auto;
@@ -228,6 +255,7 @@ body {
     transform: scale(1.05);
 }
 
+/* Responsive Design */
 @media (max-width: 800px) {
 
     .header,
@@ -291,6 +319,10 @@ body {
 
     .blog-title-box h1 {
         font-size: 18px;
+    }
+
+    .blog-icon {
+        width: 30px;
     }
 
     .blog-list ul,
