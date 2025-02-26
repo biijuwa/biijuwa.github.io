@@ -10,12 +10,14 @@ body {
     overflow-x: hidden;
     color: black;
     box-sizing: border-box;
+    /* Ensure consistent box model */
 }
 
 *,
 *::before,
 *::after {
     box-sizing: inherit;
+    /* Apply box-sizing to all elements */
 }
 
 .header,
