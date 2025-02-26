@@ -156,7 +156,6 @@ body {
     color: #3674B5;
 }
 
-/* Blog Description */
 .description {
     font-size: 0.8rem;
     margin-top: 20px;
@@ -168,7 +167,6 @@ body {
     width: 80%;
 }
 
-/* Blog List */
 .blog-list {
     text-align: justify;
     width: 80%;
@@ -188,7 +186,7 @@ body {
 }
 
 .blog-list a {
-    color: #3674B5;
+    color: #B3005E;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -203,7 +201,6 @@ body {
     margin-right: 10px;
 }
 
-/* Footer */
 .footer {
     display: flex;
     justify-content: center;
