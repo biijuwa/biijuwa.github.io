@@ -5,7 +5,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #3674B5;
+    background-color: #123458;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
@@ -22,7 +22,7 @@ body {
     align-items: center;
     padding: 15px 25px;
     width: 100%;
-    background-color: #e2f7fa;
+    background-color: #48A6A7;
     border-bottom: 2px solid #333;
     box-sizing: border-box;
 }
@@ -80,7 +80,6 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Two columns for each row */
     gap: 30px;
     width: 100%;
     max-width: 900px;
