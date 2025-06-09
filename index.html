@@ -1,68 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, User!</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Monoton&family=Neuton:wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Orbitron:wght@400..900&family=Righteous&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dot Pattern Example</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&family=Savate:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-    <header class="header">
-        <nav class="nav-component">
-            <div class="logo-container">
-                <img src="../images/uc1.png" alt="Website Logo" class="top-img" loading="lazy">
-                <span class="hello-text">SITE IN PROGRESS</span> 
-            </div>
-            <div class="time-container">
-                <img src="images/sun_icon_32_px.png" alt="Icon representing the current time" class="time-img" loading="lazy">
-                <span id="nepali-time" class="time">Loading...</span>
-            </div>
-        </nav>
-    </header>
+  <div class="container">
+    <nav class="navbar dot-pattern">
+      <div class="nav-title savate-regular">
+        <span class="greeting">Hello</span>
+        <span class="user">Guest</span>
+      </div>
+      <img src="images/pp.png" alt="User Profile" class="nav-image" />
+    </nav>
 
-    <div class="container">
-        <div class="grid-container">
-            <a href="pages/blog.html" class="grid-box grid-box-1" aria-label="Go to blog page">
-                <div class="color-box">
-                    <img src="images/blog_siten.png" alt="Icon representing the blog section" class="color-box-img" loading="lazy">
-                </div>
-                <span class="cat-name">BLOG</span>
-            </a>
-            <a href="pages/info.html" class="grid-box grid-box-2" aria-label="Go to info page">
-                <div class="color-box">
-                    <img src="images/info_siten.png" alt="Icon representing the information section" class="color-box-img" loading="lazy">
-                </div>
-                <span class="cat-name">INFO</span>
-            </a>
-            <a href="pages/myworks.html" class="grid-box grid-box-3" aria-label="Go to my works page">
-                <div class="color-box">
-                    <img src="images/project_siten.png" alt="Icon representing the my works section" class="color-box-img" loading="lazy">
-                </div>
-                <span class="cat-name">MY WORKS</span>
-            </a>
-            <a href="pages/myrecommendations.html" class="grid-box grid-box-4" aria-label="Go to my recommendations page">
-                <div class="color-box">
-                    <img src="images/reco_siten.png" alt="Icon representing the recommendations section" class="color-box-img" loading="lazy">
-                </div>
-                <span class="cat-name">MY RECOMMENDATIONS</span>
-            </a>
+    <main class="main-content dot-pattern">
+      <div class="main-top">
+        <div class="top-box">
+          <img src="icons/search.png" alt="Search Icon" class="top-icon" />
+          <span class="top-text">Thank You For Visiting<span class="blinking-cursor">_</span></span>
         </div>
-    </div>
+      </div>
+      <div class="main-middle">
+        <div class="middle-left">SOME BLOGS</div>
+        <div class="middle-right">MY MADE UP STORIES</div>
+      </div>      
+      <div class="main-bottom">"SITE IN PROGRESS"</div>
+    </main>
 
-    <footer class="footer">
-        <div class="footer-component">
-            <p>© 2025 Bijaya Limbu</p>
-            <img src="images/char.png" alt="Footer logo representing Bijaya Limbu" class="footer-img" loading="lazy">
-        </div>
-    </footer>
+    <footer class="footer dot-pattern">© 2025 Bijaya Limbu</footer>
+  </div>
 
-    <script src="js/time.js" defer></script>
+  <!-- JS -->
+  <script src="js/click.js"></script>
 </body>
-
 </html>
