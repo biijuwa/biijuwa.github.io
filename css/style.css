@@ -1,4 +1,3 @@
-/* Reset default margin and padding */
 * {
     margin: 0;
     padding: 0;
@@ -144,13 +143,11 @@ html {
 .middle-left {
     background-color: #f5a9b8;
     box-shadow: 6px 10px 0 #5bcefa;
-    /* Reduced by 2px, no blur */
 }
 
 .middle-right {
     background-color: #5bcefa;
     box-shadow: 6px 10px 0 #f5a9b8;
-    /* Reduced by 2px, no blur */
 }
 
 .middle-left:hover,
@@ -168,7 +165,6 @@ html {
     height: 5vh;
     background-color: #0E2148;
     display: flex;
-    /* ✅ Added this line */
     align-items: center;
     justify-content: center;
     color: white;
@@ -235,7 +231,6 @@ html {
 
     .middle-left {
         margin-bottom: 10px;
-        /* ✅ Add gap between stacked boxes */
     }
 }
 
