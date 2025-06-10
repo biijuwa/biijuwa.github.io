@@ -1,11 +1,12 @@
+/* ======= Global Reset ======= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body,
-html {
+html,
+body {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -13,19 +14,21 @@ html {
     font-family: sans-serif;
 }
 
+/* ======= Layout Container ======= */
 .container {
     width: 30vw;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
 }
 
+/* ======= Navbar ======= */
 .navbar {
-    height: 15vh;
+    height: 10vh;
     background-color: #0E2148;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0 20px;
     color: white;
     font-size: 1.5em;
@@ -33,134 +36,136 @@ html {
     border: 2px solid whitesmoke;
 }
 
-.nav-title {
+.nav-circles {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 1.2;
-    margin-left: 10px;
+    gap: 8px;
     margin-right: 10px;
 }
 
-.greeting {
-    font-family: "Neuton", serif;
-    font-weight: 400;
-    margin-bottom: 6px;
-    font-size: 1em;
-}
-
-.user {
-    font-family: "Savate", sans-serif;
-    font-weight: 700;
-    font-size: 1.2em;
-}
-
-.nav-image {
-    width: 54px;
-    height: 54px;
+.circle {
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    border: 2px solid white;
-    object-fit: cover;
-    box-shadow: 5px 0 0 rgba(0, 0, 0, 0.7);
+    border: 1px solid white;
 }
 
+.circle-one {
+    background-color: #075B5E;
+}
+
+.circle-two {
+    background-color: #FCEF91;
+}
+
+.circle-three {
+    background-color: #FF3F33;
+}
+
+/* ======= Main Content ======= */
 .main-content {
-    height: 80vh;
+    height: 90vh;
     background-color: #0E2148;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     border-left: 2px solid whitesmoke;
     border-right: 2px solid whitesmoke;
 }
 
-.main-top,
-.main-middle,
-.main-bottom {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main-top {
-    height: 15%;
-}
-
-.top-box {
-    background-color: #7965C1;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    box-shadow: 4px 4px 0 black;
-}
-
-.top-icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 12px;
-    object-fit: contain;
-}
-
-.top-text {
-    font-size: 1.1em;
-    font-weight: 500;
-    font-family: "Neuton", serif;
-    color: white;
-}
-
-.main-middle {
-    height: 50%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    gap: 10px;
-}
-
-.middle-left,
-.middle-right {
-    flex: 1;
+.content-rectangle {
+    width: 80%;
     height: 80%;
-    border: 3px solid #333;
-    padding: 10px;
+    background-color: white;
+    box-shadow: 10px 10px 0px 0px #FF3F33;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(51, 51, 51, 0.1) 0px, rgba(51, 51, 51, 0.1) 1px, transparent 1px, transparent 20px),
+        repeating-linear-gradient(90deg, rgba(51, 51, 51, 0.1) 0px, rgba(51, 51, 51, 0.1) 1px, transparent 1px, transparent 20px);
+    background-size: 100% 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+}
+
+/* ======= Content Sections ======= */
+.content-top,
+.content-bottom {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content-top {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    font-family: "Neuton", serif;
+    align-items: flex-start;
+    padding-left: 5px;
+}
+
+.content-top h1 {
+    font-family: "Savate", sans-serif;
+    font-weight: 700;
+    color: black;
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.content-top h2 {
+    font-family: "Savate", sans-serif;
     font-weight: 400;
+    color: #FF3F33;
+    font-size: 3.5em;
+    line-height: 1;
+}
+
+.content-bottom {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 5px;
+    padding-top: 20px;
+    font-family: "Neuton", serif;
+    font-weight: 300;
+}
+
+.content-bottom h3 {
+    color: black;
     font-size: 1.2em;
-    color: white;
-    text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
+    margin-bottom: 15px;
 }
 
-.middle-left {
-    background-color: #f5a9b8;
-    box-shadow: 6px 10px 0 #5bcefa;
+.content-bottom p {
+    color: black;
+    font-size: 1em;
+    margin-bottom: 15px;
 }
 
-.middle-right {
-    background-color: #5bcefa;
-    box-shadow: 6px 10px 0 #f5a9b8;
+/* ======= Link List ======= */
+.link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
-.middle-left:hover,
-.middle-right:hover {
-    transform: scale(1.02);
-    box-shadow: 7px 7px 0 #333;
+.link-list li {
+    margin-bottom: 15px;
 }
 
-.main-bottom {
-    height: 15%;
-    color: red;
+.link-list li a {
+    font-family: sans-serif;
+    color: #00809D;
+    text-decoration: underline;
+    font-size: 1em;
+    transition: color 0.3s ease;
 }
 
+.link-list li a:hover {
+    color: #FF3F33;
+}
+
+/* ======= Footer ======= */
 .footer {
     height: 5vh;
     background-color: #0E2148;
@@ -171,38 +176,17 @@ html {
     border-radius: 0 0 5px 5px;
     border: 2px solid whitesmoke;
     font-family: "Neuton", serif;
+    font-weight: 300;
     font-size: 0.8em;
 }
 
-.savate-regular {
-    font-family: "Savate", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.blinking-cursor {
-    animation: blink 1s step-end infinite;
-    color: white;
-}
-
-@keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-}
-
+/* ======= Utility Classes ======= */
 .dot-pattern {
     background-image: radial-gradient(#000 1px, transparent 1px);
     background-size: 20px 20px;
 }
 
+/* ======= Responsive: Tablets ======= */
 @media screen and (max-width: 768px) {
     .container {
         width: 90vw;
@@ -214,29 +198,61 @@ html {
         font-size: 1em;
     }
 
-    .navbar.dot-pattern,
-    .main-content.dot-pattern {
-        background-image: radial-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px);
-        background-size: 20px 20px;
+    .nav-circles {
+        margin-right: 5px;
     }
 
-    .main-middle {
-        flex-direction: column;
+    .content-top {
+        padding-left: 15px;
     }
 
-    .middle-left,
-    .middle-right {
-        width: 100%;
+    .content-top h1 {
+        font-size: 1.5em;
     }
 
-    .middle-left {
-        margin-bottom: 10px;
+    .content-top h2 {
+        font-size: 2.5em;
+    }
+
+    .content-bottom {
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+
+    .content-bottom h3 {
+        font-size: 1em;
+    }
+
+    .link-list li a {
+        font-size: 0.9em;
     }
 }
 
+/* ======= Responsive: Mobile ======= */
 @media screen and (max-width: 480px) {
     .container {
         width: 100vw;
+    }
+
+    .main-content {
+        width: 100vw;
+        border-left: none;
+        border-right: none;
+    }
+
+    .footer {
+        width: 100vw;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+
+    .content-bottom {
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 5px;
     }
 
     .navbar,
@@ -247,9 +263,33 @@ html {
         text-align: center;
     }
 
-    .navbar.dot-pattern,
-    .main-content.dot-pattern {
-        background-image: radial-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px);
-        background-size: 20px 20px;
+    .content-top {
+        padding-left: 10px;
+    }
+
+    .content-top h1 {
+        font-size: 1.2em;
+    }
+
+    .content-top h2 {
+        font-size: 2em;
+    }
+
+    .content-bottom h3 {
+        font-size: 0.9em;
+    }
+
+    .link-list {
+        width: 100%;
+        text-align: left;
+    }
+
+    .link-list li {
+        margin-left: 0;
+    }
+
+    .link-list li a {
+        display: inline-block;
+        text-align: left;
     }
 }

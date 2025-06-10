@@ -3,41 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Namaste</title>
+  <title>Test</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&family=Savate:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts (valid only) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Savate:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
+  <!-- Your custom stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <div class="container">
     <nav class="navbar dot-pattern">
-      <div class="nav-title savate-regular">
-        <span class="greeting">Hello</span>
-        <span class="user">Guest</span>
+      <div class="nav-circles">
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
+        <div class="circle circle-three"></div>
       </div>
-      <img src="images/pp.png" alt="User Profile" class="nav-image" />
     </nav>
 
     <main class="main-content dot-pattern">
-      <div class="main-top">
-        <div class="top-box">
-          <img src="icons/search.png" alt="Search Icon" class="top-icon" />
-          <span class="top-text">Thank You For Visiting<span class="blinking-cursor">_</span></span>
+      <div class="content-rectangle">
+        <div class="content-top">
+          <h1 class="font-savate-bold">Hello</h1>
+          <h2 class="font-savate-regular">World!</h2>
+        </div>
+        <div class="content-bottom">
+          <h3 class="font-neuton-bold">I work as a technical writer.</h3>
+          <p class="font-neuton-regular">Here are some links you might like:</p>
+          <ul class="link-list font-neuton-regular">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+          SITE IN PROGRESS
         </div>
       </div>
-      <div class="main-middle">
-        <div class="middle-left">SOME BLOGS</div>
-        <div class="middle-right">MY MADE UP STORIES</div>
-      </div>      
-      <div class="main-bottom">"SITE IN PROGRESS"</div>
     </main>
 
-    <footer class="footer dot-pattern">© 2025 Bijaya Limbu</footer>
+    <footer class="footer dot-pattern font-neuton-light">© 2025 Bijaya Limbu</footer>
   </div>
 
-  <script src="js/click.js"></script>
+  <script src="js/click.js" defer></script>
 </body>
 </html>
