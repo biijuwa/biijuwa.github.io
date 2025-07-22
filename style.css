@@ -3,6 +3,33 @@ body {
     background-color: #f0f0f0;
 }
 
+/* Add grainy texture */
+.grainy {
+    position: relative;
+    overflow: hidden;
+}
+
+.grainy::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.2;
+    /* adjust texture visibility */
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgcj0iMC4xIiBjeT0iMSIgZmlsbD0iIzAwMDAwMCIvPjxjaXJjbGUgY3g9IjUiIHI9IjAuMSIgY3k9IjUiIGZpbGw9IiMwMDAwMDAiLz48Y2lyY2xlIGN4PSI5IiByPSIwLjEiIGN5PSI1IiBmaWxsPSIjMDAwMDAwIi8+PC9zdmc+");
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    z-index: 1;
+}
+
+/* Make sure inner content stays above the grain */
+header>*,
+main>*,
+footer>* {
+    position: relative;
+    z-index: 2;
+}
+
 /* Custom style for the "sliced" effect on Rectangle Left */
 .sliced-right {
     clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
