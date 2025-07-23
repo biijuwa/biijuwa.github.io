@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Games Layout</title>
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
 
-  <!-- CSS -->
   <link rel="stylesheet" href="css/game.css" />
 
-  <!-- Adsense -->
-  <meta name="google-adsense-account" content="ca-pub-2621327103433939" />
+  <!-- Google Adsense Account Meta -->
+  <meta name="google-adsense-account" content="ca-pub-2621327103433939">
 </head>
-<body class="h-screen w-screen flex items-center justify-center bg-gray-100 relative font-sans">
 
-  <div class="flex flex-col w-full md:w-[30%] h-screen relative shadow-lg">
-
-    <!-- HEADER -->
+<body
+  class="h-screen w-screen flex items-center justify-center bg-gray-100 relative font-sans"
+>
+  <div
+    class="flex flex-col w-full md:w-[30%] h-screen relative shadow-lg"
+  >
     <header
       class="grainy h-[15vh] flex items-center justify-between relative px-4 bitcount-prop-single bg-[rgba(94,171,214,0.75)] border border-white/50"
     >
-      <a href="index.html" class="text-2xl font-bold text-gray-800 hover:no-underline">
-        Bijaya Limbu
-      </a>
-      <img src="img/smiling.png" alt="Placeholder Image" class="w-5 h-5 object-cover" />
+      <div class="text-2xl font-bold text-gray-800">Bijaya Limbu</div>
+      <img
+        src="img/gamepad.png"
+        alt="Placeholder Image"
+        class="w-5 h-5 object-cover"
+      />
     </header>
 
-    <!-- MAIN -->
     <main
       class="grainy h-[70vh] flex flex-col items-center justify-center p-[10%] oswald relative bg-[rgba(94,171,214,0.75)] border border-white/50"
     >
@@ -45,54 +46,262 @@
         </div>
         <div class="h-full w-[60%]"></div>
       </div>
-      <div class="w-full h-[90%] bg-[#273F4F] solid-shadow p-4 flex flex-col justify-around">
-        <!-- DICE -->
-        <div class="w-full h-[22%] bg-gray-600 rounded flex items-center justify-between p-4">
+      <div
+        class="w-full h-[90%] bg-[#273F4F] solid-shadow p-4 flex flex-col justify-around"
+      >
+        <!-- Roll Dices -->
+        <div
+          class="w-full h-[22%] bg-gray-600 rounded flex items-center justify-between p-4"
+        >
           <div class="flex items-center space-x-2">
-            <img src="img/dice.png" class="w-8 h-8" />
+            <img
+              src="img/dice.png"
+              alt="Dices Icon"
+              class="w-8 h-8 object-cover"
+            />
             <div class="flex flex-col leading-tight">
               <span class="text-white text-xl font-bold">Roll Dices</span>
-              <span id="diceWinStreak" class="text-yellow-300 text-xs font-semibold">Historical Win Streak: 0</span>
+              <span
+                id="diceWinStreak"
+                class="text-yellow-300 text-xs font-semibold"
+                >Historical Win Streak: 0</span
+              >
             </div>
           </div>
-          <button id="playDiceButton" class="px-4 py-2 bg-[#FE7743] text-white rounded-full hover:bg-[#e85e2e]">Play</button>
+          <button
+            id="playDiceButton"
+            class="px-4 py-2 bg-[#FE7743] text-white rounded-full hover:bg-[#e85e2e] transition"
+          >
+            Play
+          </button>
         </div>
 
-        <!-- RANDOM -->
-        <div class="w-full h-[22%] bg-gray-600 rounded flex items-center justify-between p-4">
+        <!-- Random Games -->
+        <div
+          class="w-full h-[22%] bg-gray-600 rounded flex items-center justify-between p-4"
+        >
           <div class="flex items-center space-x-2">
-            <img src="img/random.png" class="w-8 h-8" />
+            <img
+              src="img/random.png"
+              alt="Random Game Icon"
+              class="w-8 h-8 object-cover"
+            />
             <div class="flex flex-col leading-tight">
               <span class="text-white text-xl font-bold">Random Games</span>
-              <span id="randomWinStreak" class="text-yellow-300 text-xs font-semibold">Historical Win Streak: 0</span>
+              <span
+                id="randomWinStreak"
+                class="text-yellow-300 text-xs font-semibold"
+                >Historical Win Streak: 0</span
+              >
             </div>
           </div>
-          <button id="playRandomButton" class="px-4 py-2 bg-[#FE7743] text-white rounded-full hover:bg-[#e85e2e]">Play</button>
+          <button
+            id="playRandomButton"
+            class="px-4 py-2 bg-[#FE7743] text-white rounded-full hover:bg-[#e85e2e] transition"
+          >
+            Play
+          </button>
         </div>
 
-        <!-- RPS -->
-        <div class="w-full h-[22%] bg-gray-600 rounded flex items-center justify-between p-4">
+        <!-- Rock Paper Scissors -->
+        <div
+          class="w-full h-[22%] bg-gray-600 rounded flex items-center justify-between p-4"
+        >
           <div class="flex items-center space-x-2">
-            <img src="img/rock-paper-scissors.png" class="w-8 h-8" />
+            <img
+              src="img/rock-paper-scissors.png"
+              alt="Rock Paper Scissors Icon"
+              class="w-8 h-8 object-cover"
+            />
             <div class="flex flex-col leading-tight">
               <span class="text-white text-xl font-bold">Rock Paper Scissors</span>
-              <span id="rpsWinStreak" class="text-yellow-300 text-xs font-semibold">Historical Win Streak: 0</span>
+              <span
+                id="rpsWinStreak"
+                class="text-yellow-300 text-xs font-semibold"
+                >Historical Win Streak: 0</span
+              >
             </div>
           </div>
-          <button id="playRPSButton" class="px-4 py-2 bg-[#FE7743] text-white rounded-full hover:bg-[#e85e2e]">Play</button>
+          <button
+            id="playRPSButton"
+            class="px-4 py-2 bg-[#FE7743] text-white rounded-full hover:bg-[#e85e2e] transition"
+          >
+            Play
+          </button>
         </div>
 
-        <!-- SNAKE -->
-        <div class="w-full h-[22%] bg-gray-600 rounded flex items-center justify-between p-4">
+        <!-- Snake -->
+        <div
+          class="w-full h-[22%] bg-gray-600 rounded flex items-center justify-between p-4"
+        >
           <div class="flex items-center space-x-2">
-            <img src="img/snake.png" class="w-8 h-8" />
+            <img
+              src="img/snake.png"
+              alt="Snake Game Icon"
+              class="w-8 h-8 object-cover"
+            />
             <div class="flex flex-col leading-tight">
               <span class="text-white text-xl font-bold">Snake</span>
-              <span id="snakeWinStreak" class="text-yellow-300 text-xs font-semibold">Historical Win Streak: 0</span>
+              <span
+                id="snakeWinStreak"
+                class="text-yellow-300 text-xs font-semibold"
+                >Historical Win Streak: 0</span
+              >
             </div>
           </div>
-          <button id="playSnakeButton" class="px-4 py-2 bg-[#FE7743] text-white rounded-full hover:bg-[#e85e2e]">Play</button>
+          <button
+            id="playSnakeButton"
+            class="px-4 py-2 bg-[#FE7743] text-white rounded-full hover:bg-[#e85e2e] transition"
+          >
+            Play
+          </button>
         </div>
+      </div>
+
+      <!-- RPS overlay -->
+      <div
+        id="rpsOverlay"
+        class="absolute top-[5%] left-[5%] w-[90%] h-[90%] p-4 bg-[#FE7743] rounded-lg z-10 flex flex-col items-center justify-center opacity-0 pointer-events-none scale-95 transition-all duration-300 ease-in-out"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="rpsTitle"
+      >
+        <div class="hidden opacity-100 scale-100"></div>
+
+        <div
+          id="rpsStartScreen"
+          class="flex flex-col items-center"
+        >
+          <h2
+            id="rpsTitle"
+            class="text-3xl font-bold text-white mb-4"
+          >
+            Rock Paper Scissors
+          </h2>
+          <p class="text-white">
+            Are you ready for the absolute challenge?
+          </p>
+          <button
+            id="startRPSButton"
+            class="mt-8 px-8 py-3 bg-[#273F4F] text-white text-2xl font-bold rounded-lg shadow-md hover:bg-gray-700"
+          >
+            START
+          </button>
+        </div>
+
+        <div
+          id="rpsChoicesScreen"
+          class="hidden flex-col items-center w-full"
+        >
+          <!-- Current Win Streak shown here -->
+          <div
+            id="rpsCurrentWinStreakSelection"
+            class="text-white text-lg font-semibold mb-4 text-center"
+          >
+            Current Win Streak: 0
+          </div>
+
+          <h3
+            class="text-2xl font-bold text-red-600 mb-4 text-center"
+          >
+            CPU made its selection.
+          </h3>
+          <h2
+            class="text-2xl font-bold text-white mb-8 text-center"
+          >
+            Choose your move:
+          </h2>
+          <div
+            class="flex justify-evenly max-w-sm mx-auto px-8 space-x-6"
+          >
+            <img
+              id="rockChoice"
+              src="img/rock.png"
+              alt="Rock"
+              class="w-16 h-16 object-contain cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110"
+            />
+            <img
+              id="paperChoice"
+              src="img/paper.png"
+              alt="Paper"
+              class="w-16 h-16 object-contain cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110"
+            />
+            <img
+              id="scissorsChoice"
+              src="img/scissors.png"
+              alt="Scissors"
+              class="w-16 h-16 object-contain cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110"
+            />
+          </div>
+        </div>
+
+        <div
+          id="rpsResultScreen"
+          class="hidden flex flex-col items-center justify-center w-full h-full"
+        >
+          <!-- Current Win Streak shown here -->
+          <div
+            id="rpsCurrentWinStreakResult"
+            class="text-white text-xl font-bold mb-4 text-center"
+          >
+            Current Win Streak: 0
+          </div>
+
+          <div
+            id="countdownText"
+            class="text-4xl font-bold text-white mb-6"
+          ></div>
+          <div
+            class="flex justify-between items-center w-full px-8"
+          >
+            <div class="flex flex-col items-center">
+              <span
+                class="text-white text-lg mb-2"
+                >CPU</span
+              >
+              <img
+                id="cpuChoiceImage"
+                src="img/question.png"
+                class="w-16 h-16 object-contain"
+                alt="CPU choice"
+              />
+            </div>
+            <div class="flex flex-col items-center">
+              <span
+                class="text-white text-lg mb-2"
+                >You</span
+              >
+              <img
+                id="userChoiceImage"
+                src=""
+                class="w-16 h-16 object-contain"
+                alt="Your choice"
+              />
+            </div>
+          </div>
+          <div
+            id="winnerText"
+            class="text-2xl font-bold text-white mt-6"
+          ></div>
+          <button
+            id="playAgainButton"
+            class="hidden mt-8 px-8 py-3 bg-[#273F4F] text-white text-xl font-bold rounded-lg shadow-md hover:bg-gray-700"
+          >
+            Play Again
+          </button>
+        </div>
+
+        <button
+          id="closeRPSOverlay"
+          class="absolute top-4 right-4 p-2"
+          aria-label="Close Rock Paper Scissors"
+        >
+          <img
+            src="img/close.png"
+            alt="Close button"
+            class="h-6 w-6"
+          />
+        </button>
       </div>
 
       <div
@@ -100,7 +309,6 @@
       ></div>
     </main>
 
-    <!-- FOOTER -->
     <footer
       class="grainy h-[15vh] flex flex-col items-center justify-end p-2 bitcount-prop-single relative bg-[rgba(94,171,214,0.75)] border border-white/50"
     >
@@ -112,95 +320,7 @@
     </footer>
   </div>
 
-  <!-- RPS Overlay -->
-  <div
-    id="rpsOverlay"
-    class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 pointer-events-none scale-95 transition-all duration-300 z-50"
-  >
-    <div class="bg-white rounded-lg p-6 w-80 relative flex flex-col items-center">
-      <button
-        id="closeRPSOverlay"
-        class="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-2xl font-bold leading-none"
-        aria-label="Close"
-      >
-        &times;
-      </button>
-
-      <!-- Start Screen -->
-      <div id="rpsStartScreen" class="flex flex-col items-center space-y-4">
-        <h2 class="text-xl font-bold">Rock Paper Scissors</h2>
-        <button
-          id="startRPSButton"
-          class="px-4 py-2 bg-[#FE7743] text-white rounded-full hover:bg-[#e85e2e]"
-        >
-          Start
-        </button>
-      </div>
-
-      <!-- Choices Screen -->
-      <div
-        id="rpsChoicesScreen"
-        class="hidden flex flex-col items-center space-y-4"
-      >
-        <div class="flex space-x-4">
-          <img
-            id="rockChoice"
-            src="img/rock.png"
-            alt="Rock"
-            class="w-16 h-16 cursor-pointer hover:scale-110 transition-transform"
-          />
-          <img
-            id="paperChoice"
-            src="img/paper.png"
-            alt="Paper"
-            class="w-16 h-16 cursor-pointer hover:scale-110 transition-transform"
-          />
-          <img
-            id="scissorsChoice"
-            src="img/scissors.png"
-            alt="Scissors"
-            class="w-16 h-16 cursor-pointer hover:scale-110 transition-transform"
-          />
-        </div>
-        <div id="countdownText" class="text-lg font-bold"></div>
-      </div>
-
-      <!-- Result Screen -->
-      <div
-        id="rpsResultScreen"
-        class="hidden flex flex-col items-center space-y-4"
-      >
-        <div class="flex space-x-8 items-center">
-          <div class="flex flex-col items-center">
-            <span>You</span>
-            <img
-              id="userChoiceImage"
-              src="img/question.png"
-              alt="Your choice"
-              class="w-16 h-16"
-            />
-          </div>
-          <div class="flex flex-col items-center">
-            <span>CPU</span>
-            <img
-              id="cpuChoiceImage"
-              src="img/question.png"
-              alt="CPU choice"
-              class="w-16 h-16"
-            />
-          </div>
-        </div>
-        <div id="winnerText" class="text-xl font-bold"></div>
-        <button
-          id="playAgainButton"
-          class="px-4 py-2 bg-[#FE7743] text-white rounded-full hover:bg-[#e85e2e] hidden"
-        >
-          Play Again
-        </button>
-      </div>
-    </div>
-  </div>
-
   <script src="js/games.js"></script>
 </body>
+
 </html>
