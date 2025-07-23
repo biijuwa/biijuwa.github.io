@@ -1,0 +1,84 @@
+/*
+  Base Styles
+*/
+:root {
+    /* Colors */
+    --color-primary: #FE7743;
+    --color-secondary: #273F4F;
+    --color-accent: #E3DE61;
+    --color-blue-bg: rgba(94, 171, 214, 0.75);
+    --color-light-bg: #e2dbd1;
+    --color-text-dark: #2d3748;
+    --color-text-light: #ffffff;
+
+    /* Fonts */
+    --font-bitcount: "Bitcount Prop Single", system-ui;
+    --font-oswald: "Oswald", sans-serif;
+}
+
+body {
+    font-family: var(--font-oswald);
+    background-color: #f0f0f0;
+}
+
+/*
+  Layout Components
+*/
+.grainy {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Use a consistent border */
+}
+
+.grainy::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.2;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgcj0iMC4xIiBjeT0iMSIgZmlsbD0iIzAwMDAwMCIvPjxjaXJjbGUgY3g9IjUiIHI9IjAuMSIgY3k9IjUiIGZpbGw9IiMwMDAwMDAiLz48Y2lyY2xlIGN4PSI5IiByPSIwLjEiIGN5PSI1IiBmaWxsPSIjMDAwMDAwIi8+PC9zdmc+");
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    z-index: 1;
+}
+
+/* Ensure inner content is above the grain texture */
+.grainy>* {
+    position: relative;
+    z-index: 2;
+}
+
+/*
+  Specific Element Styles
+*/
+.sliced-right {
+    clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.solid-shadow {
+    box-shadow: 6px 6px 0px 0px var(--color-accent);
+}
+
+.zigzag-border {
+    height: 20px;
+    /* Ensure a consistent height */
+    background-color: var(--color-light-bg);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M0 5 L5 0 L10 5' fill='none' stroke='%23e2dbd1' stroke-width='1'/%3E%3C/svg%3E") 5 repeat;
+    border-image-slice: 5;
+}
+
+/*
+  Font Overrides (Optional but good practice)
+*/
+.bitcount-prop-single {
+    font-family: var(--font-bitcount);
+    font-weight: 400;
+    /* Set a default weight if not defined in Tailwind */
+}
+
+.oswald {
+    font-family: var(--font-oswald);
+    font-weight: 400;
+}
