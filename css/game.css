@@ -1,5 +1,8 @@
-/* Base Styles */
+/*
+  Base Styles
+*/
 :root {
+  /* Colors */
   --color-primary: #FE7743;
   --color-secondary: #273F4F;
   --color-accent: #E3DE61;
@@ -8,6 +11,7 @@
   --color-text-dark: #2d3748;
   --color-text-light: #ffffff;
 
+  /* Fonts */
   --font-bitcount: "Bitcount Prop Single", system-ui;
   --font-oswald: "Oswald", sans-serif;
 }
@@ -22,7 +26,9 @@ body {
   flex-direction: column;
 }
 
-/* Layout Components */
+/*
+  Layout Components
+*/
 .grainy {
   position: relative;
   overflow: hidden;
@@ -35,18 +41,20 @@ body {
   inset: 0;
   pointer-events: none;
   opacity: 0.2;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgcj0iMC4xIiBjeT0iMSIgZmlsbD0iIzAwMDAwMCIvPjxjaXJjbGUgY3g9IjUiIHI9IjAuMSIgY3k9IjUiIGZpbGw9IiMwMDAwMDAiLz48Y2lyY2xlIGN4PSI5IiByPSIwLjEiIGN5PSI1IiBmaWxsPSIjMDAwMDAwIi8+PC9zdmc+");
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zz48Y2lyY2xlIGN4PSIxIiByPSIwLjEiIGN5PSIxIiBmaWxsPSIjMDAwMDAwIi8+PGNpcmNsZSBjeD0iNSIgcj0iMC4xIiBjeT0iNSIgZmlsbD0iIzAwMDAwMCIvPjxjaXJjbGUgY3g9IjkiIHJ9IjAuMSIgY3k9IjUiIGZpbGw9IiMwMDAwMDAiLz48L3N2Zz4=");
   background-repeat: repeat;
   background-size: 100px 100px;
   z-index: 1;
 }
 
-.grainy > * {
+.grainy>* {
   position: relative;
   z-index: 2;
 }
 
-/* Specific Element Styles */
+/*
+  Specific Element Styles
+*/
 .sliced-right {
   clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
@@ -63,7 +71,9 @@ body {
   border-image-slice: 5;
 }
 
-/* Font Overrides */
+/*
+  Font Overrides
+*/
 .bitcount-prop-single {
   font-family: var(--font-bitcount);
   font-weight: 400;
@@ -116,15 +126,21 @@ body {
 /* Responsive adjustments */
 @media (max-width: 640px) {
   body {
-    padding: 1rem;
+    /* Removed padding to fix the gap on mobile */
   }
+
   .grainy {
     border-width: 1px;
   }
 
   header,
   footer {
-    height: 12vh !important;
+    /* Removed fixed height to allow content to dictate height */
+    height: auto;
+    /* Added padding for better spacing on mobile */
+    padding: 0.5rem 1rem;
+    /* Center content vertically on mobile */
+    justify-content: center;
   }
 
   .sliced-right {
