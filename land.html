@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepali LAND Conversion - Single Unit</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .container-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Deeper shadow */
+            padding: 2.5rem; /* Increased padding */
+            width: 100%;
+            max-width: 500px; /* Max width for better readability */
+            text-align: center;
+        }
+        .input-field, .select-field {
+            border: 1px solid #cbd5e1; /* Slate-300 border */
+            border-radius: 0.75rem; /* Rounded fields */
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            width: 100%;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            -webkit-appearance: none; /* Remove default select arrow */
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1.5em 1.5em;
+        }
+        .input-field:focus, .select-field:focus {
+            outline: none;
+            border-color: #3b82f6; /* Blue-500 on focus */
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Light blue ring on focus */
+        }
+        .convert-button {
+            background: linear-gradient(to right, #3b82f6, #2563eb); /* Blue gradient */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); /* Shadow for button */
+            width: 100%;
+        }
+        .convert-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+        }
+        .result-box {
+            background-color: #e0f2fe; /* Light blue background for result */
+            border: 1px solid #93c5fd; /* Blue-300 border */
+            border-radius: 0.75rem;
+            padding: 1rem;
+            font-size: 1rem;
+            color: #1e40af; /* Darker blue text */
+            text-align: left;
+        }
+        .result-item {
+            margin-bottom: 0.5rem;
+        }
+        .result-item:last-child {
+            margin-bottom: 0;
+        }
+        .result-label {
+            font-weight: 500;
+            color: #334155; /* Slate-700 */
+        }
+        .result-value {
+            font-weight: 600;
+            color: #1e40af; /* Darker blue */
+        }
+        .error-message {
+            color: #ef4444; /* Red-500 for errors */
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-card">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">Nepali Land Conversion</h1>
+
+        <div class="space-y-4 mb-6">
+            <input type="number" id="inputValue" placeholder="Enter value" class="input-field">
+            <div class="relative">
+                <label for="inputUnit" class="block text-left text-sm font-medium text-gray-700 mb-1">Input Unit:</label>
+                <select id="inputUnit" class="select-field">
+                    <option value="SQ_METER">SQ. METER - (बर्ग मिटर)</option>
+                    <option value="SQ_FOOT">SQ. FOOT - (बर्ग फुट)</option>
+                    <option value="BIGAHA">BIGAHA - (बिगाहा)</option>
+                    <option value="KATHHA">KATHHA - (कठ्ठा)</option>
+                    <option value="DHUR">DHUR - (धुर)</option>
+                    <option value="ROPANI">ROPANI - (रोपनी)</option>
+                    <option value="AANA">AANA - (आना)</option>
+                    <option value="POISA">POISA - (पैसा)</option>
+                    <option value="DAAM">DAAM - (दाम)</option>
+                </select>
+            </div>
+            <div class="relative mt-4">
+                <label for="outputUnit" class="block text-left text-sm font-medium text-gray-700 mb-1">Output Unit:</label>
+                <select id="outputUnit" class="select-field">
+                    <option value="SQ_METER">SQ. METER - (बर्ग मिटर)</option>
+                    <option value="SQ_FOOT">SQ. FOOT - (बर्ग फुट)</option>
+                    <option value="BIGAHA">BIGAHA - (बिगाहा)</option>
+                    <option value="KATHHA">KATHHA - (कठ्ठा)</option>
+                    <option value="DHUR">DHUR - (धुर)</option>
+                    <option value="ROPANI">ROPANI - (रोपनी)</option>
+                    <option value="AANA">AANA - (आना)</option>
+                    <option value="POISA">POISA - (पैसा)</option>
+                    <option value="DAAM">DAAM - (दाम)</option>
+                </select>
+            </div>
+            <p id="errorMessage" class="error-message hidden"></p>
+        </div>
+
+        <button id="convertBtn" class="convert-button mb-6">Convert Land Area</button>
+
+        <div id="resultContainer" class="result-box hidden">
+            <h2 class="text-xl font-bold text-gray-800 mb-3">Converted Value:</h2>
+            <div id="results" class="space-y-2">
+                <!-- Single result will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const inputValueField = document.getElementById('inputValue');
+        const inputUnitSelect = document.getElementById('inputUnit');
+        const outputUnitSelect = document.getElementById('outputUnit'); // New output unit select
+        const convertBtn = document.getElementById('convertBtn');
+        const resultContainer = document.getElementById('resultContainer');
+        const resultsDiv = document.getElementById('results');
+        const errorMessageDisplay = document.getElementById('errorMessage');
+
+        // Conversion constants based on 1 Daam = 1.99 m² = 21.39 sq. feet
+        // We use Square Feet as the base unit for all internal calculations.
+        const SQ_FOOT_PER_SQ_METER = 21.39 / 1.99; // Derived: 1 sq meter = approx 10.7487 sq ft
+        const SQ_METER_PER_SQ_FOOT = 1.99 / 21.39; // Derived: 1 sq foot = approx 0.09303 sq meter
+
+        const UNIT_TO_SQ_FEET_FACTOR = {
+            'SQ_METER': SQ_FOOT_PER_SQ_METER,
+            'SQ_FOOT': 1,
+            'BIGAHA': 72900,
+            'KATHHA': 3645,
+            'DHUR': 182.25,
+            'ROPANI': 5476,
+            'AANA': 342.25,
+            'POISA': 85.56,
+            'DAAM': 21.39
+        };
+
+        const UNIT_LABELS = {
+            'SQ_METER': 'SQ. METER - (बर्ग मिटर)',
+            'SQ_FOOT': 'SQ. FOOT - (बर्ग फुट)',
+            'BIGAHA': 'BIGAHA - (बिगाहा)',
+            'KATHHA': 'KATHHA - (कठ्ठा)',
+            'DHUR': 'DHUR - (धुर)',
+            'ROPANI': 'ROPANI - (रोपनी)',
+            'AANA': 'AANA - (आना)',
+            'POISA': 'POISA - (पैसा)',
+            'DAAM': 'DAAM - (दाम)'
+        };
+
+        convertBtn.addEventListener('click', () => {
+            const inputValue = parseFloat(inputValueField.value);
+            const inputUnit = inputUnitSelect.value;
+            const outputUnit = outputUnitSelect.value; // Get the selected output unit
+
+            // Clear previous messages and results
+            errorMessageDisplay.classList.add('hidden');
+            resultsDiv.innerHTML = '';
+            resultContainer.classList.add('hidden');
+
+            // Validation
+            if (isNaN(inputValue) || inputValue <= 0) {
+                errorMessageDisplay.textContent = 'Please enter a valid positive number for the land area.';
+                errorMessageDisplay.classList.remove('hidden');
+                return;
+            }
+
+            // Convert input value to base unit (Square Feet)
+            const areaInSqFeet = inputValue * UNIT_TO_SQ_FEET_FACTOR[inputUnit];
+
+            // Perform conversion to the selected output unit
+            let convertedValue;
+            if (outputUnit === 'SQ_METER') {
+                convertedValue = areaInSqFeet * SQ_METER_PER_SQ_FOOT;
+            } else {
+                convertedValue = areaInSqFeet / UNIT_TO_SQ_FEET_FACTOR[outputUnit];
+            }
+
+            // Display the single result
+            const label = UNIT_LABELS[outputUnit];
+            const value = convertedValue.toFixed(4); // Format to 4 decimal places for precision
+
+            const resultItem = document.createElement('div');
+            resultItem.classList.add('result-item', 'flex', 'justify-between', 'items-center', 'py-1');
+            resultItem.innerHTML = `
+                <span class="result-label">${label}:</span>
+                <span class="result-value">${value}</span>
+            `;
+            resultsDiv.appendChild(resultItem);
+
+            resultContainer.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
